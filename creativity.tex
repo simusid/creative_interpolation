@@ -1,0 +1,63 @@
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{abstract}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{natbib}
+
+% Customizing the header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{}}
+\fancyhead[C]{\textbf{Authors' Names}}
+\fancyhead[R]{\thepage}
+
+% Abstract settings
+\renewcommand{\Abstractnamefont}{\bfseries}
+\renewcommand{\Abstracttitlefont}{\bfseries}
+\renewcommand{\Abstractkeywordsfont}{\bfseries}
+\renewcommand{\Abstractdatefont}{\bfseries}
+
+% Abstract
+\begin{document}
+
+\begin{abstract}
+Can an LLM be creative?
+\end{abstract}
+
+\section{Introduction}
+Can a model be creative or is it only a stochastic parrot.   Can we even define creativitiy?   It should include novelty, originality, value, meaningfulnes and effectiveness.
+
+Further, it is a process rather than a function call.  The creative process will explore and generate ideas, handle uncertainty/ambiguity, take feedback and criticizm and revise, develop
+a voice or style or personality. 
+
+\section{Methods}
+Information and knowledge is represented by vector embeddings.  Ingest a set of document and create an embedding diagram with UMAP.   Points "near" each other are semantically similar.  The success of 
+this step depends on the quality of the embedding model.   So "knowledge" lives on this high dimension manifold that we may interpret in 2D.  text is encoded to a point, but conceptually any point in this space 
+may map back to a fragment of text that was not ingested.   Given existing text fragments \( t_0 \) and \( t_1 \), their embeddings produce \( v_0 \) and \( v_1 \) in vector space \( V \), we need to find 
+a text \( t_n \) that is sufficiently similar to \( t_0 \) and \( t_1 \) such that its embedding \( v_n \) lies between \( v_0 \) and \( v_1 \).
+
+The datasets used were arxiv abstracts.   These were embedded.   Each embedding represents the result or outcome of an existing creative idea.  Points were visually selected that are near each other
+in a neigborhood on the embedding diagram.   These points are considered to be endpoints of a line segment in the embedding.   The text is retrieved for the two end points.
+
+Then a prompt is constructed that instructs the model to examine the two abstracts, consider the concepts involved and create a new abstract that reflects the ideas in the two existing abstracts.   This 
+prompt is executed N times.  Each time the prompt is evaluated, an embedding is created in the same vector space.   The prompt that ends up most closely within the path p0 to p1 is selected.   This new prompt will 
+have the style and format of a journal abstract and thus is the fictitious output of a research paper.   A new prompt is constructed that instructs the model to generate a hypthesis and the steps necessary 
+to perform the research
+
+
+\section{Results}
+This section presents the results of your study. You can include tables, figures, and other visual aids to support your findings.
+These results are empirical in nature and require an SME to judge if the candidate research is reasonable and realistic.
+
+\section{Discussion}
+This section discusses the implications of your study and its contributions to the field.
+
+\section{Conclusion}
+This section summarizes the main findings of your study and provides a conclusion.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
