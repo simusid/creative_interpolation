@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{natbib}
+\usepackage{lipsum}  % For generating dummy text if needed
 
 % Customizing the header
 \pagestyle{fancy}
@@ -13,18 +14,31 @@
 \fancyhead[C]{\textbf{Authors' Names}}
 \fancyhead[R]{\thepage}
 
-% Abstract settings
-\renewcommand{\Abstractnamefont}{\bfseries}
-\renewcommand{\Abstracttitlefont}{\bfseries}
-\renewcommand{\Abstractkeywordsfont}{\bfseries}
-\renewcommand{\Abstractdatefont}{\bfseries}
+% Define missing abstract font commands
+\providecommand{\Abstractnamefont}{\bfseries}
+\providecommand{\Abstracttitlefont}{\bfseries}
+\providecommand{\Abstractkeywordsfont}{\bfseries}
+\providecommand{\Abstractdatefont}{\bfseries}
 
-% Abstract
+% Make abstract span both columns
+\usepackage{multicol}
+
 \begin{document}
 
-\begin{abstract}
-Can an LLM be creative?
-\end{abstract}
+% Title could go here before the abstract
+
+% Make abstract span both columns
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \begin{abstract}
+    Can an LLM be creative? Yes I think it can and I'm going to describe exactly how I made it happen.  
+First you have to rememver that points near each other in an embedding are related.   So what aobut the point 
+inbetween two close points.   There should be some other text that will end up at that point.   So we can use the 
+two endpoints to try and make up a new block fo text and keep trying until we get new text that ends up there.   
+That should be new text similar to but not exactly like the end points, thus it is new, and created by the model.
+    \end{abstract}
+  \end{@twocolumnfalse}
+]
 
 \section{Introduction}
 Can a model be creative or is it only a stochastic parrot.   Can we even define creativitiy?   It should include novelty, originality, value, meaningfulnes and effectiveness.
