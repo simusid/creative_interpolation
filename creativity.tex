@@ -46,6 +46,15 @@ Can a model be creative or is it only a stochastic parrot.   Can we even define 
 Further, it is a process rather than a function call.  The creative process will explore and generate ideas, handle uncertainty/ambiguity, take feedback and criticizm and revise, develop
 a voice or style or personality. 
 
+\section{Approach}
+A creative process combines existing ideas and produces a new thought.  The new thought should have qualities such as reasonableness, actual novelty, usefulness, 
+\begin{itemize}
+\item Create vector embeddings of text
+\item Create an embedding map of all vectors
+\item Sample the vector space 
+\end{itemize}
+Take units of text and create relevant vector embeddings.
+
 \section{Methods}
 Information and knowledge is represented by vector embeddings.  Ingest a set of document and create an embedding diagram with UMAP.   Points "near" each other are semantically similar.  The success of 
 this step depends on the quality of the embedding model.   So "knowledge" lives on this high dimension manifold that we may interpret in 2D.  text is encoded to a point, but conceptually any point in this space 
